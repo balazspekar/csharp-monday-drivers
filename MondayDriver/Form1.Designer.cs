@@ -34,7 +34,7 @@
             this.pathTextBox = new System.Windows.Forms.TextBox();
             this.openButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.fileListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // driveLabel
@@ -70,6 +70,7 @@
             this.pathTextBox.Name = "pathTextBox";
             this.pathTextBox.Size = new System.Drawing.Size(439, 20);
             this.pathTextBox.TabIndex = 3;
+            this.pathTextBox.TextChanged += new System.EventHandler(this.pathTextBox_TextChanged);
             // 
             // openButton
             // 
@@ -79,6 +80,7 @@
             this.openButton.TabIndex = 4;
             this.openButton.Text = "Open";
             this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
             // deleteButton
             // 
@@ -88,21 +90,22 @@
             this.deleteButton.TabIndex = 5;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // listBox1
+            // fileListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(47, 73);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(439, 264);
-            this.listBox1.TabIndex = 6;
+            this.fileListBox.FormattingEnabled = true;
+            this.fileListBox.Location = new System.Drawing.Point(47, 73);
+            this.fileListBox.Name = "fileListBox";
+            this.fileListBox.Size = new System.Drawing.Size(439, 264);
+            this.fileListBox.TabIndex = 6;
             // 
             // MondayDrivesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 385);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.fileListBox);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.pathTextBox);
@@ -125,7 +128,7 @@
         private System.Windows.Forms.TextBox pathTextBox;
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox fileListBox;
     }
 }
 
