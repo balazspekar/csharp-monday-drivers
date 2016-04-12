@@ -104,6 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(501, 385);
             this.Controls.Add(this.fileListBox);
             this.Controls.Add(this.deleteButton);
@@ -112,7 +113,12 @@
             this.Controls.Add(this.driveComboBox);
             this.Controls.Add(this.pathLabel);
             this.Controls.Add(this.driveLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MondayDrivesForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Monday Drives";
             this.Load += new System.EventHandler(this.MondayDrivesForm_Load);
             this.ResumeLayout(false);

@@ -13,6 +13,13 @@ namespace MondayDriver
 {
     public partial class MondayDrivesForm : Form
     {
+
+        // This is a property
+        public string CurrentPath
+        {
+            get { return pathTextBox.Text; }
+        }
+
         public MondayDrivesForm()
         {
             InitializeComponent();
@@ -27,8 +34,9 @@ namespace MondayDriver
 
             // Making the ComboBox readonly
             driveComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            pathTextBox.ReadOnly = true;
 
-            
+
         }
 
         private void driveComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,12 +70,32 @@ namespace MondayDriver
 
         private void openButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This is not implemented yet.");
+            var selectedItemInListBox = (string) fileListBox.SelectedItem;
+            var attribute = File.GetAttributes(selectedItemInListBox);
+            if (attribute == FileAttributes.Directory)
+            {
+                pathTextBox.Text = (string) fileListBox.SelectedItem;
+            }
+            else
+            {
+                
+                //MessageBox.Show(text);
+                using (Form2 form2 = new Form2(selectedItemInListBox))
+                {
+                    if (form2.ShowDialog() == DialogResult.OK)
+                    {
+                       
+                    }
+                }
+            }
+
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This is not implemented yet.");
+            //File.Delete(@"YOURFILEPATH");
+            //MessageBox.Show(pathTextBox.Text + " has been deleted!");
+            MessageBox.Show("This code is commented out because of security purposes.");
         }
 
     }
