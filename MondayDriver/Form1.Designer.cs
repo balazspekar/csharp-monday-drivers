@@ -62,6 +62,7 @@
             this.driveComboBox.Name = "driveComboBox";
             this.driveComboBox.Size = new System.Drawing.Size(439, 21);
             this.driveComboBox.TabIndex = 2;
+            this.driveComboBox.SelectedIndexChanged += new System.EventHandler(this.driveComboBox_SelectedIndexChanged);
             // 
             // pathTextBox
             // 

@@ -29,5 +29,16 @@ namespace MondayDriver
 
 
         }
+
+        private void driveComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (driveComboBox.SelectedIndex == -1)
+            {
+                pathTextBox.Text = string.Empty;
+            }
+            else {
+                pathTextBox.Text = driveComboBox.SelectedItem.ToString();
+            }
+        }
     }
 }
